@@ -9,14 +9,14 @@ const ingredients = [
 
 const ingredientsList = document.querySelector("#ingredients");
 
-ingredients.map(ingredient => {
-  const listItem = document.createElement("li"); 
-  listItem.textContent = ingredient; 
-  listItem.classList.add("item"); 
-  ingredientsList.appendChild(listItem); 
-});
+const listItem = ingredients.map(ingredient => 
+  `<li class ='item'>${ingredient}</li>`).join('')
+ingredientsList.insertAdjacentHTML('beforeend', listItem);
 
-
-// const listItem = ingredients.map((ingredient) => `<li class="item">${ingredient}</li>`).join(" ");
-// ingredientsList.innerHTML = listItem;
   
+// ingredients.map(ingredient => {
+//   const listItem = document.createElement("li"); 
+//   listItem.textContent = ingredient; 
+//   listItem.classList.add("item"); 
+//   ingredientsList.appendChild(listItem); 
+// });
